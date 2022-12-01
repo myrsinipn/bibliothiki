@@ -1,3 +1,22 @@
+#MYRSINI
+members = {}
+start = input("login or signup")
+if start =="signup" :
+    username = input("Please enter your username")
+    password1 = input("Please enter your password")
+    password2=input("Enter your password again")
+    if password1==password2:
+        members[username]=password1
+        print(members)
+    else:
+        print("Please enter the same password")
+elif start =='login':
+        username = input("put your username")
+        password = input("Put your password")
+        if username in members.keys() and password in members.values() :
+            print("Welcome",username)
+        else:
+            print("Wrong username or password. Please try again!")
 #SOFIA
 def main():                                                                                                               
                                                                                                                           
