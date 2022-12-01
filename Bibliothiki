@@ -1,1 +1,56 @@
-#APP FOR GROUP BOOK MANAGEMENT
+#SOFIA
+def main():                                                                                                               
+                                                                                                                          
+    booklist = []                                                                                                         
+    choice = 0                                                                                                            
+    while choice != 4:                                                                                                    
+        print("****BOOKGRAM****")                                                                                         
+        print("1)Add a book")                                                                                             
+        print("2)Look up a book")                                                                                         
+        print("3)Display your books")                                                                                     
+        print("4)Exit")                                                                                                   
+        choice = int(input("choose your action: "))                                                                       
+                                                                                                                          
+                                                                                                                          
+        if choice == 1:                                                                                                   
+            print("Adding a book...")                                                                                     
+            currently_reading = []                                                                                        
+            read = []                                                                                                     
+            favorites = []                                                                                                
+            new_book = input("Enter the title of the book:")                                                              
+            author = input("enter the author:")                                                                           
+            print("Type 1 if you want to place the book in your currently reading list")                                  
+            print ("Type 2 if you want to place the book in your read book")                                              
+            print("Type 3 if you want to place the book in your favorites list")                                          
+            choice2 = int(input("where do you want to store this book?"))                                                 
+            if choice2 == 1 :                                                                                             
+                currently_reading.append([new_book,author])                                                               
+            elif choice2 == 2:                                                                                            
+                read.append([new_book,author])                                                                            
+            elif choice2 == 3:                                                                                            
+                favorites.append([new_book, author])                                                                      
+            booklist.append([new_book,author])                                                                            
+                                                                                                                          
+        elif choice == 2:                                                                                                 
+            print("Looking up for a book...")                                                                             
+            keyword = input("enter search terms:")                                                                        
+            for book in booklist:                                                                                         
+                if keyword in book:                                                                                       
+                    print(book)                                                                                           
+        elif choice == 3:                                                                                                 
+            print("Displaying all books...")                                                                              
+            for i in range (len(booklist))    :                                                                           
+                print(booklist[i])                                                                                        
+        elif choice == 4:                                                                                                 
+            print("Quitting program")                                                                                     
+    print("Program Terminated")                                                                                           
+                                                                                                                          
+                                                                                                                          
+                                                                                                                          
+                                                                                                                          
+                                                                                                                          
+                                                                                                                          
+                                                                                                                          
+                                                                                                                          
+if __name__ == "__main__":                                                                                                
+    main()                                                                                                                
