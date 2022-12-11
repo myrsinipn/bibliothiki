@@ -4,7 +4,7 @@ members = {}
 
 def start():
     while True:
-        choice = input("login or signup")
+        choice = input("login or signup: ")
         if choice == 'login' :
             return login()
         elif choice == 'signup':
@@ -15,10 +15,10 @@ def start():
 
 
 def signup():
-    username = input("Please enter your username")
+    username = input("Please enter your username: ")
     while True:
-        password1 = input("Please enter your password")
-        password2 = input("Enter your password again")
+        password1 = input("Please enter your password: ")
+        password2 = input("Enter your password again: ")
         if password1 == password2:
             members[username] = password1
             print(username,",","*"*len(password1))
@@ -31,8 +31,8 @@ def signup():
 
 def login():
     while True:
-        username = input("put your username")
-        password = input("Put your password")
+        username = input("put your username: ")
+        password = input("Put your password: ")
         if username in members.keys() and password in members.values():
             print("Welcome", username)
             return books()
@@ -48,9 +48,9 @@ def books():
     choice = 0
     while choice != 4:
         print("****BOOKGRAM****")
-        print("1)Add a book")
-        print("2)Look up a book")
-        print("3)Display your books")
+        print("1)Add a book: ")
+        print("2)Look up a book: ")
+        print("3)Display your books: ")
         print("4)Exit")
         choice = int(input("choose your action: "))
 
@@ -59,12 +59,12 @@ def books():
             currently_reading = []
             read = []
             favorites = []
-            new_book = input("Enter the title of the book:")
-            author = input("enter the author:")
+            new_book = input("Enter the title of the book: ")
+            author = input("enter the author: ")
             print("Type 1 if you want to place the book in your currently reading list")
             print("Type 2 if you want to place the book in your read book")
             print("Type 3 if you want to place the book in your favorites list")
-            choice2 = int(input("where do you want to store this book?"))
+            choice2 = int(input("where do you want to store this book? "))
             if choice2 == 1:
                 currently_reading.append([new_book, author])
             elif choice2 == 2:
@@ -75,7 +75,7 @@ def books():
 
         elif choice == 2:
             print("Looking up for a book...")
-            keyword = input("enter search terms:")
+            keyword = input("enter search terms: ")
             for book in booklist:
                 if keyword in book:
                     print(book)
